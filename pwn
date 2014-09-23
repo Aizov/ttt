@@ -14,6 +14,7 @@ CMD:ttt(playerid,params[])					// Команда предложения игры
 {
 	new idplayer,bet;
 	if(sscanf(params,"dd",idplayer,bet))return SCM(playerid,-1,"Введите /ttt [id игрока] [ставка]");
+	if(idplayer == playerid) return SCM(playerid,-1,"Нельзя играть с самим собой");
 	TicTacToe[playerid][Move] = 1; 			// Даём первый ход тому кто предложил
 	TicTacToe[playerid][Bet] = bet;			// Записываем ставку в переменную игрока
 	TicTacToe[idplayer][Bet] = bet;			// Записываем ставку в переменную оппонента
