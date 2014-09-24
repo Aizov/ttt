@@ -48,8 +48,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 		if(TicTacToe[playerid][Move] == 1)
 		{
 			if(TicTacToe[playerid][StatusTicTacToe][i] == 1 || TicTacToe[playerid][StatusTicTacToe][i] ==  2 || TicTacToe[TicTacToe[playerid][Opponent]][StatusTicTacToe][i] == 1 || TicTacToe[TicTacToe[playerid][Opponent]][StatusTicTacToe][i] ==  2) return SCM(playerid,-1,"Эта клетка уже занята");// 1 - X , 2 - 0
-			if(TicTacToe[playerid][Who] == 0)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i+16]),PlayerTextDrawShow(TicTacToe[playerid][Opponent],TicTacToe[playerid][TicTacToeTextDraw][i+16]),TicTacToe[playerid][StatusTicTacToe][i+16] = 2; //  0								 // После нажатия ставим нолик 
-			if(TicTacToe[playerid][Who] == 1)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i+25]),PlayerTextDrawShow(TicTacToe[playerid][Opponent],TicTacToe[playerid][TicTacToeTextDraw][i+25]),TicTacToe[playerid][StatusTicTacToe][i+25] = 1; // X								 // После нажатия ставим крестик 
+			if(TicTacToe[playerid][Who] == 0)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i+16]),PlayerTextDrawShow(TicTacToe[playerid][Opponent],TicTacToe[playerid][TicTacToeTextDraw][i+16]),TicTacToe[playerid][StatusTicTacToe][i] = 2; //  0								 // После нажатия ставим нолик 
+			if(TicTacToe[playerid][Who] == 1)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i+25]),PlayerTextDrawShow(TicTacToe[playerid][Opponent],TicTacToe[playerid][TicTacToeTextDraw][i+25]),TicTacToe[playerid][StatusTicTacToe][i] = 1; // X								 // После нажатия ставим крестик 
 			TicTacToe[playerid][Moves] += 1;																				// Прибаляем 1 к ходу
 			TicTacToe[playerid][Move] = 0;																					// Прекращаем ход игрока
 			CancelSelectTextDraw(playerid);																					// Забираем курсор
@@ -70,38 +70,29 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			PlayerTextDrawShow(playerid, TicTacToe[playerid][TicTacToeTextDraw][15]);
 			
 			//
-			new ttick;
 			TicTacToe[TicTacToe[playerid][Opponent]][Move] = 1;					// Даём ход противнику
 			SelectTextDraw(TicTacToe[playerid][Opponent],-1);					// Показываем ему курсор
-			for(new z=1;z< 10;z++)
+			new result,tuck;
+			for(new p = 0; p < sizeof(TTTwin); p++)
 			{
-				if(ttick > 8) return SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid), ttick = 0;
-				if(TicTacToe[playerid][StatusTicTacToe][z] != 0) ttick ++;
-				SCM(playerid,-1,"Ничья");
-				SCM(TicTacToe[playerid][Opponent],-1,"Ничья");
+				if(TicTacToe[playerid][StatusTicTacToe][TTTwin[p][0]] == TicTacToe[playerid][StatusTicTacToe][TTTwin[p][1]] && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][1]] == TicTacToe[playerid][StatusTicTacToe][TTTwin[p][2]] && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][2]] != 0)result = 1;
+			}	
+			if(result == 1)
+			{
+				format(string,sizeof(string),"Вы победили и получили $%d",TicTacToe[playerid][Bet]);
+				SCM(playerid,-1,string);
+				Player[playerid][Money] += TicTacToe[playerid][Bet];
+				format(string,sizeof(string),"Вы проиграли и потеряли $%d",TicTacToe[TicTacToe[playerid][Opponent]][Bet]);
+				Player[TicTacToe[playerid][Opponent]][Money] -= TicTacToe[TicTacToe[playerid][Opponent]][Bet];
+				SCM(TicTacToe[playerid][Opponent],-1,string);
 				FFFToNull(playerid);
+				FFFToNull(TicTacToe[playerid][Opponent]);
 			}
-			if(TicTacToe[playerid][Moves] > 2)
+			for(new k;k< 10;k++)
 			{
-				new result;
-				// Быдлоскриптер - начало
-				for(new p = 0; p < sizeof(TTTwin); p++)
-				{
-					if(TicTacToe[playerid][StatusTicTacToe][TTTwin[p][0]] != 0 && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][1]] != 0 && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][2]] != 0)result = 1;
-				}	
-				if(result == 1)
-				{
-					format(string,sizeof(string),"Вы победили и получили $%d",TicTacToe[playerid][Bet]);
-					SCM(playerid,-1,string);
-					Player[playerid][Money] += TicTacToe[playerid][Bet];
-					format(string,sizeof(string),"Вы проиграли и потеряли $%d",TicTacToe[TicTacToe[playerid][Opponent]][Bet]);
-					Player[TicTacToe[playerid][Opponent]][Money] -= TicTacToe[TicTacToe[playerid][Opponent]][Bet];
-					SCM(TicTacToe[playerid][Opponent],-1,string);
-					FFFToNull(playerid);
-					FFFToNull(TicTacToe[playerid][Opponent]);
-				}
+				if(TicTacToe[playerid][StatusTicTacToe][k] != 0) tuck ++;
+				if(tuck >8) SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid);
 			}
-			
 		}
 	}
 }
