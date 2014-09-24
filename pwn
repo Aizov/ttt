@@ -9,6 +9,17 @@ enum TicTacToeEnum
 	Who										// Кто крестик и кто нолик
 }
 new TicTacToe[MAX_PLAYERS][TicTacToeEnum];
+new TTTwin[8][3] =
+{
+	{1, 2, 3},
+	{4, 5, 6},
+	{7, 8, 9},
+	{1, 4, 7},
+	{2, 5, 8},
+	{3, 6, 9},
+	{1, 5, 9},
+	{3, 5, 7}
+};
 //---------------------------------------------------------------------------------------------------
 CMD:ttt(playerid,params[])					// Команда предложения игры
 {
@@ -59,13 +70,13 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			PlayerTextDrawShow(playerid, TicTacToe[playerid][TicTacToeTextDraw][15]);
 			
 			//
-			new tick;
+			new ttick;
 			TicTacToe[TicTacToe[playerid][Opponent]][Move] = 1;					// Даём ход противнику
 			SelectTextDraw(TicTacToe[playerid][Opponent],-1);					// Показываем ему курсор
 			for(new z=1;z< 10;z++)
 			{
-				if(tick > 8) return SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid), tick = 0;
-				if(TicTacToe[playerid][StatusTicTacToe][z] != 0) tick ++;
+				if(ttick > 8) return SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid), ttick = 0;
+				if(TicTacToe[playerid][StatusTicTacToe][z] != 0) ttick ++;
 				SCM(playerid,-1,"Ничья");
 				SCM(TicTacToe[playerid][Opponent],-1,"Ничья");
 				FFFToNull(playerid);
@@ -74,31 +85,10 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 			{
 				new result;
 				// Быдлоскриптер - начало
-				// Для удобного чтения
-				if(TicTacToe[playerid][StatusTicTacToe][1] == TicTacToe[playerid][StatusTicTacToe][2]\
-				&& TicTacToe[playerid][StatusTicTacToe][2] == TicTacToe[playerid][StatusTicTacToe][3]\
-				&& TicTacToe[playerid][StatusTicTacToe][3] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][4] == TicTacToe[playerid][StatusTicTacToe][5]\
-				&& TicTacToe[playerid][StatusTicTacToe][5] == TicTacToe[playerid][StatusTicTacToe][6]\
-				&& TicTacToe[playerid][StatusTicTacToe][6] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][7] == TicTacToe[playerid][StatusTicTacToe][8]\
-				&& TicTacToe[playerid][StatusTicTacToe][8] == TicTacToe[playerid][StatusTicTacToe][9]\
-				&& TicTacToe[playerid][StatusTicTacToe][9] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][1] == TicTacToe[playerid][StatusTicTacToe][4]\
-				&& TicTacToe[playerid][StatusTicTacToe][4] == TicTacToe[playerid][StatusTicTacToe][7]\
-				&& TicTacToe[playerid][StatusTicTacToe][7] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][2] == TicTacToe[playerid][StatusTicTacToe][5]\
-				&& TicTacToe[playerid][StatusTicTacToe][5] == TicTacToe[playerid][StatusTicTacToe][8]\
-				&& TicTacToe[playerid][StatusTicTacToe][8] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][3] == TicTacToe[playerid][StatusTicTacToe][6]\
-				&& TicTacToe[playerid][StatusTicTacToe][6] == TicTacToe[playerid][StatusTicTacToe][9]\
-				&& TicTacToe[playerid][StatusTicTacToe][9] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][1] == TicTacToe[playerid][StatusTicTacToe][5]\
-				&& TicTacToe[playerid][StatusTicTacToe][5] == TicTacToe[playerid][StatusTicTacToe][9]\
-				&& TicTacToe[playerid][StatusTicTacToe][9] !=0) result = 1;
-				if(TicTacToe[playerid][StatusTicTacToe][3] == TicTacToe[playerid][StatusTicTacToe][5]\
-				&& TicTacToe[playerid][StatusTicTacToe][5] == TicTacToe[playerid][StatusTicTacToe][7]\
-				&& TicTacToe[playerid][StatusTicTacToe][7] !=0) result = 1;
+				for(new p = 0; p < sizeof(TTTwin); p++)
+				{
+					if(TicTacToe[playerid][StatusTicTacToe][TTTwin[p][0]] != 0 && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][1]] != 0 && TicTacToe[playerid][StatusTicTacToe][TTTwin[p][2]] != 0)result = 1;
+				}	
 				if(result == 1)
 				{
 					format(string,sizeof(string),"Вы победили и получили $%d",TicTacToe[playerid][Bet]);
