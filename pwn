@@ -1,12 +1,14 @@
 enum TicTacToeEnum
 {
-	PlayerText:TicTacToeTextDraw[37],		// ТекстДравы
-	StatusTicTacToe[37],					// Для информации о занятых клетках
+	PlayerText:TicTacToeTextDraw[37],
+	StatusTicTacToe[37],
 	Moves,									// Ходы
 	Move,									// Кто ходит
 	Bet,									// Кто ходит
 	Opponent,								// Опонент
-	Who										// Кто крестик и кто нолик
+	Who,									// Кто крестик а кто нолик
+	Accept,									// Переменная для подтверждения
+	Gamed									// Играет ли он
 }
 new TicTacToe[MAX_PLAYERS][TicTacToeEnum];
 new TTTwin[8][3] =
@@ -21,22 +23,26 @@ new TTTwin[8][3] =
 	{3, 5, 7}
 };
 //---------------------------------------------------------------------------------------------------
-CMD:ttt(playerid,params[])					// Команда предложения игры
+CMD:ttt(playerid,params[])
 {
-	new idplayer,bet;
+	new idplayer,bet,string[128],name[25];
 	if(sscanf(params,"dd",idplayer,bet))return SCM(playerid,-1,"Введите /ttt [id игрока] [ставка]");
-	if(idplayer == playerid) return SCM(playerid,-1,"Нельзя играть с самим собой");
-	TicTacToe[playerid][Move] = 1; 			// Даём первый ход тому кто предложил
-	TicTacToe[playerid][Bet] = bet;			// Записываем ставку в переменную игрока
-	TicTacToe[idplayer][Bet] = bet;			// Записываем ставку в переменную оппонента
-	SelectTextDraw(playerid, -1);			// Показываем курсор
-	TicTacToe[playerid][Opponent]=idplayer; // Записываем опонентов игроку
-	TicTacToe[idplayer][Opponent]=playerid;	// Записываем опонентов противнику
-	TicTacToe[idplayer][Who] = 1;			// Даём крестик противнику
-	LoadTTT(playerid);						// Загружаем текстдравы игроку
-	LoadTTT(idplayer);						// Загружаем текстдравы противнику
-	for(new i;i<17;i++)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i]);	//Показываем текстдравы игроку
-	for(new i;i<17;i++)PlayerTextDrawShow(idplayer,TicTacToe[idplayer][TicTacToeTextDraw][i]);	//Показываем текстдравы противнику
+	if(playerid == idplayer) return SCM(playerid,-1,"Вы не можете играть с самим собой");
+	if(TicTacToe[playerid][Gamed] != 0) return SCM(playerid,-1,"Вы уже играете");
+	if(TicTacToe[idplayer][Gamed] != 0) return SCM(playerid,-1,"Игрок уже играет");
+	if(TicTacToe[idplayer][Accept] != 0) return SCM(playerid,-1,"Игроку уже предложили играть");
+	if(TicTacToe[playerid][Accept] != 0) return SCM(playerid,-1,"Вы уже предложили кому-то сыграть");
+	TicTacToe[idplayer][Opponent] = playerid;
+	TicTacToe[playerid][Bet] = bet;
+	TicTacToe[idplayer][Bet] = bet;
+	GetPlayerName(playerid,name,sizeof(name));
+	format(string,sizeof(string),"%s предложил вам сыграть в крестики-нолики. Ставка: %d",name,bet);
+	SCM(idplayer,-1,string);
+	SCM(idplayer,-1,"Нажмите  Y для принятия, N для отмены");
+	GetPlayerName(idplayer,name,sizeof(name));
+	format(string,sizeof(string),"Вы предложили %s сыграть в крестики-нолики. Ставка: %d",name,bet);
+	SCM(playerid,-1,string);
+	TicTacToe[idplayer][Accept] = 1;
 	return true;
 }
 //---------------------------------------------------------------------------------------------------
@@ -88,10 +94,10 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 				FFFToNull(playerid);
 				FFFToNull(TicTacToe[playerid][Opponent]);
 			}
-			for(new k;k< 10;k++)
+			for(new k;k< 9;k++)
 			{
 				if(TicTacToe[playerid][StatusTicTacToe][k] != 0) tuck ++;
-				if(tuck >8) SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid);
+				if(tuck >4) SCM(playerid,-1,"Ничья"),SCM(TicTacToe[playerid][Opponent],-1,"Ничья"),FFFToNull(playerid);
 			}
 		}
 	}
@@ -104,12 +110,21 @@ stock FFFToNull(playerid)
 		PlayerTextDrawHide(playerid,TicTacToe[playerid][TicTacToeTextDraw][y]);
 		PlayerTextDrawDestroy(playerid,TicTacToe[playerid][TicTacToeTextDraw][y]);
 		PlayerTextDrawHide(TicTacToe[playerid][Opponent],TicTacToe[TicTacToe[playerid][Opponent]][TicTacToeTextDraw][y]);
-		PlayerTextDrawDestroy(TicTacToe[playerid][Opponent],TicTacToe[TicTacToe[playerid][Opponent]][TicTacToeTextDraw][y]);
+		PlayerTextDrawDestroy(TicTacToe[playerid][Opponent],TicTacToe[TicTacToe[playerid][Opponent]][TicTacToeTextDraw][y]);	
 		TicTacToe[playerid][StatusTicTacToe][y] = 0;
 		TicTacToe[TicTacToe[playerid][Opponent]][StatusTicTacToe][y] = 0;
-		TicTacToe[playerid][Bet] = 0;
-		TicTacToe[TicTacToe[playerid][Opponent]][Bet] = 0;
 	}
+	TicTacToe[playerid][Bet] = 0;
+	TicTacToe[TicTacToe[playerid][Opponent]][Bet] = 0;
+	TicTacToe[TicTacToe[playerid][Opponent]][Move] = 0;
+	TicTacToe[playerid][Move] = 0;
+	CancelSelectTextDraw(playerid);
+	CancelSelectTextDraw(TicTacToe[playerid][Opponent]);
+	TicTacToe[playerid][Gamed] = 0;
+	TicTacToe[playerid][Who] = 0;
+	TicTacToe[TicTacToe[playerid][Opponent]][Who] = 0;
+	TicTacToe[TicTacToe[playerid][Opponent]][Gamed] = 0;
+	return true;
 }
 //---------------------------------------------------------------------------------------------------
 LoadTTT(playerid) // Загружаем tic-tac-toe
