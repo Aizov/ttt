@@ -243,7 +243,7 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 		}//25
 		if(i>25&&i<35)
 		{
-			PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], -37.950225, -36.750072);
+			PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 37.013179, 37.333343);
 			PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 4);
 			PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 1);
 			PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 1);
