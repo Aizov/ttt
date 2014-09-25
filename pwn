@@ -134,142 +134,33 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0.000000, 18.319177);
 	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 2.216759, 0.000000);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0);
 	PlayerTextDrawUseBox(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], true);
 	PlayerTextDrawBoxColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 102);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][0], 0);
 
 	TicTacToe[playerid][TicTacToeTextDraw][1] = CreatePlayerTextDraw(playerid, 15.118629, 283.749938, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][1], true);
-
-
-
 	TicTacToe[playerid][TicTacToeTextDraw][2] = CreatePlayerTextDraw(playerid, 67.530036, 283.916595, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][2], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][3] = CreatePlayerTextDraw(playerid, 120.067359, 283.749908, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][3], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][4] = CreatePlayerTextDraw(playerid, 15.181568, 334.333282, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][4], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][5] = CreatePlayerTextDraw(playerid, 67.718894, 335.333282, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][5], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][6] = CreatePlayerTextDraw(playerid, 120.256217, 335.749908, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][6], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][7] = CreatePlayerTextDraw(playerid, 15.370445, 383.416656, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][7], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][8] = CreatePlayerTextDraw(playerid, 67.907768, 384.999938, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][8], true);
-
 	TicTacToe[playerid][TicTacToeTextDraw][9] = CreatePlayerTextDraw(playerid, 119.508049, 385.416564, "ld_drv:tvbase");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 44.509521, 42.583312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 4);
-	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], 1);
-	PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][9], true);
-
+	
 	TicTacToe[playerid][TicTacToeTextDraw][10] = CreatePlayerTextDraw(playerid, 182.254760, 272.999755, "Opponent");
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 0.449999, 1.600000);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 0);
 	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 1);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 51);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 0);
 	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][10], 1);
 
 	TicTacToe[playerid][TicTacToeTextDraw][11] = CreatePlayerTextDraw(playerid, 183.254760, 273.999725, "Opponent");
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 0.449999, 1.600000);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 0);
 	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 1);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 51);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 0);
 	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][11], 1);
 
 	GetPlayerName(TicTacToe[playerid][Opponent],string,24);
@@ -277,7 +168,6 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 0.449999, 1.600000);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 0);
 	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 2);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 51);
 	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][12], 1);
@@ -288,7 +178,6 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 0.388622, 1.967497);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], -2147483393);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 0);
 	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 1);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 51);
 	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][13], 2);
@@ -298,7 +187,6 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 0.388622, 1.967497);
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], -2147483393);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 0);
 	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 1);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 51);
 	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][14], 2);
@@ -311,201 +199,55 @@ LoadTTT(playerid) // Загружаем tic-tac-toe
 	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], 1);
 	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], -2147450625);
 	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], -2);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], 0);
 	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], 51);
 	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], 1);
 	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][15], 1);
 
 	if(TicTacToe[playerid][Who] == 0)TicTacToe[playerid][TicTacToeTextDraw][16] = CreatePlayerTextDraw(playerid, 186.002899, 390.250000, "ld_beat:circle"); // 0
 	if(TicTacToe[playerid][Who] == 1)TicTacToe[playerid][TicTacToeTextDraw][16] = CreatePlayerTextDraw(playerid, 186.002899, 390.250000, "ld_beat:cross"); // X
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 0.000000, 0.000000);
 	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 43.103958, 39.083312);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 4);
 	PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][16], 1);
 
 	TicTacToe[playerid][TicTacToeTextDraw][17] = CreatePlayerTextDraw(playerid, 56.691116, 323.750030, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][17], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][18] = CreatePlayerTextDraw(playerid, 108.291397, 323.583343, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][18], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][19] = CreatePlayerTextDraw(playerid, 161.297241, 323.416656, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][19], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][20] = CreatePlayerTextDraw(playerid, 56.879989, 375.166656, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][20], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][21] = CreatePlayerTextDraw(playerid, 108.480270, 374.999969, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][21], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][22] = CreatePlayerTextDraw(playerid, 161.486114, 375.999969, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][22], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][23] = CreatePlayerTextDraw(playerid, 57.068862, 423.666656, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][23], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][24] = CreatePlayerTextDraw(playerid, 108.669143, 424.666656, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][24], 4);
-
 	TicTacToe[playerid][TicTacToeTextDraw][25] = CreatePlayerTextDraw(playerid, 161.206466, 425.666595, "ld_beat:circle");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], -37.950225, -36.750072);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][25], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][26] = CreatePlayerTextDraw(playerid, 19.209426, 287.583435, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][26], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][27] = CreatePlayerTextDraw(playerid, 70.809715, 286.833404, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][27], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][28] = CreatePlayerTextDraw(playerid, 124.752609, 286.666717, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][28], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][29] = CreatePlayerTextDraw(playerid, 19.398303, 337.833312, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][29], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][30] = CreatePlayerTextDraw(playerid, 70.998596, 338.249969, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][30], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][31] = CreatePlayerTextDraw(playerid, 124.004440, 339.249938, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][31], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][32] = CreatePlayerTextDraw(playerid, 19.118652, 386.916625, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][32], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][33] = CreatePlayerTextDraw(playerid, 71.187454, 387.333282, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][33], 4);
-
-	TicTacToe[playerid][TicTacToeTextDraw][34] = CreatePlayerTextDraw(playerid, 123.724777, 388.916564, "LD_BEAT:cross");
-	PlayerTextDrawLetterSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 0.000000, 0.000000);
-	PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 37.013179, 37.333343);
-	PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 1);
-	PlayerTextDrawColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], -1);
-	PlayerTextDrawSetShadow(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 0);
-	PlayerTextDrawSetOutline(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 0);
-	PlayerTextDrawBackgroundColor(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 0x00000000);
-	PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][34], 4);
+	TicTacToe[playerid][TicTacToeTextDraw][26] = CreatePlayerTextDraw(playerid, 19.209426, 287.583435, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][27] = CreatePlayerTextDraw(playerid, 70.809715, 286.833404, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][28] = CreatePlayerTextDraw(playerid, 124.752609, 286.666717, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][29] = CreatePlayerTextDraw(playerid, 19.398303, 337.833312, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][30] = CreatePlayerTextDraw(playerid, 70.998596, 338.249969, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][31] = CreatePlayerTextDraw(playerid, 124.004440, 339.249938, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][32] = CreatePlayerTextDraw(playerid, 19.118652, 386.916625, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][33] = CreatePlayerTextDraw(playerid, 71.187454, 387.333282, "ld_beat:cross");
+	TicTacToe[playerid][TicTacToeTextDraw][34] = CreatePlayerTextDraw(playerid, 123.724777, 388.916564, "ld_beat:cross");
+	for(new i=1;i<35;i++)
+	{
+		//1
+		if(i>0&&i<11)
+		{
+			PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 44.509521, 42.583312);
+			PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 4);
+			PlayerTextDrawSetSelectable(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], true);
+		}
+		//10
+		if(i>16&&i<26)
+		{//17
+			PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], -37.950225, -36.750072);
+			PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 4);
+		}//25
+		if(i>25&&i<35)
+		{
+			PlayerTextDrawTextSize(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], -37.950225, -36.750072);
+			PlayerTextDrawFont(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 4);
+			PlayerTextDrawSetProportional(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 1);
+			PlayerTextDrawAlignment(playerid, TicTacToe[playerid][TicTacToeTextDraw][i], 1);
+		}
+	}
 }
 //---------------------------------------------------------------------------------------------------
