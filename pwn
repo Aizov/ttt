@@ -46,6 +46,51 @@ CMD:ttt(playerid,params[])
 	return true;
 }
 //---------------------------------------------------------------------------------------------------
+public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+{
+	if(newkeys == 65536)//Yes
+	{
+		if(TicTacToe[playerid][Accept] == 1)
+		{
+			TicTacToe[playerid][Move] = 1;
+			SelectTextDraw(playerid, -1);
+			TicTacToe[TicTacToe[playerid][Opponent]][Opponent] = playerid;
+			TicTacToe[TicTacToe[playerid][Opponent]][Accept] = 0;
+			TicTacToe[playerid][Accept] = 0;
+			TicTacToe[TicTacToe[playerid][Opponent]][Who] = 1;
+			TicTacToe[playerid][Gamed] = 1;
+			TicTacToe[TicTacToe[playerid][Opponent]][Gamed] = 1;
+			LoadTTT(playerid);
+			LoadTTT(TicTacToe[playerid][Opponent]);
+			GetPlayerName(TicTacToe[playerid][Opponent],name,sizeof(name));
+			format(string,sizeof(string),"Вы приняли предложение от %s. Ставка: %d",name,TicTacToe[playerid][Bet]);
+			SCM(playerid,-1,string);
+			GetPlayerName(playerid,name,sizeof(name));
+			format(string,sizeof(string),"%s принял ваше предложение. Ставка: %d",name,TicTacToe[playerid][Bet]);
+			SCM(TicTacToe[playerid][Opponent],-1,string);
+			for(new i;i<17;i++)PlayerTextDrawShow(playerid,TicTacToe[playerid][TicTacToeTextDraw][i]);
+			for(new i;i<17;i++)PlayerTextDrawShow(TicTacToe[playerid][Opponent],TicTacToe[TicTacToe[playerid][Opponent]][TicTacToeTextDraw][i]);
+		}	
+	}
+	if(newkeys == 131072)//No
+	{
+		if(TicTacToe[playerid][Accept] == 1)
+		{
+			GetPlayerName(TicTacToe[playerid][Opponent],name,sizeof(name));
+			format(string,sizeof(string),"Вы отказались от предложения %s",name);
+			SCM(playerid,-1,string);
+			GetPlayerName(playerid,name,sizeof(name));
+			format(string,sizeof(string),"%s отказался от вашего предложения",name);
+			SCM(TicTacToe[playerid][Opponent],-1,string);
+			TicTacToe[playerid][Opponent] = 0;
+			TicTacToe[playerid][Bet] = 0;
+			TicTacToe[playerid][Accept] = 0;
+			TicTacToe[TicTacToe[playerid][Opponent]][Opponent] = 0;
+			TicTacToe[TicTacToe[playerid][Opponent]][Bet] = 0;
+		}
+	}
+}
+//---------------------------------------------------------------------------------------------------
 public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 {
 	new string[128];
